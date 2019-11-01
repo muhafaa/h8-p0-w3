@@ -14,7 +14,6 @@ function groupAnimals(animals) {
 
   temp = 'a';
   var index = 0;
-//   console.log(animals);
   
   for (var k = 0; k < animals.length; k++) { 
         if (animals[k][0] == temp) {
