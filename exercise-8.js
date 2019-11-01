@@ -5,7 +5,7 @@ function pasanganTerbesar(num) {
     var temp = 0;
     var hasil = 0;
     for (var i = 0; i < String(num).length-1; i++) {
-        hasil = parseInt(String(num)[i]+(String(num)[i+1]))
+        hasil = parseInt(String(num)[i]+(String(num)[i+1]));
         if (hasil > temp) {
             temp = hasil;
         }
