@@ -17,7 +17,6 @@ function groupAnimals(animals) {
 //   console.log(animals);
   
   for (var k = 0; k < animals.length; k++) { 
-    //   for (var l = 0; l < animals.length; l++) {
         if (animals[k][0] == temp) {
             if (newArr[index] === undefined) {
                 newArr[index] = [animals[k]];
@@ -29,7 +28,6 @@ function groupAnimals(animals) {
             newArr[newArr.length] = [animals[k]];
             index++;
          }
-    //   }
   }
   return newArr;
 }
