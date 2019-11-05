@@ -9,7 +9,7 @@ function targetTerdekat(arr) {
                 if (arr[right] == 'x') {
                     countToRight -= 1;
                     break;
-                } else if (arr[right] == arr[arr.length-1] && arr.length-1 != 'x' && arr.length-1 != 'o') {
+                } else if (arr[right] == arr[arr.length-1] && arr.length-1 != 'x') {
                     countToRight = 0;
                 }
             }
@@ -19,19 +19,24 @@ function targetTerdekat(arr) {
                 if (arr[left] == 'x') {
                     countToLeft -= 1;
                     break;
-                } else if (arr[left] == arr[0] && arr[0] != 'x' && arr[0] != 'o') {
+                } else if (arr[left] == arr[0] && arr[0] != 'x') {
                     countToLeft = 0;
                 }
             }
             break;
         }
     }
-    if (countToRight > countToLeft) {
+    
+    if (countToLeft == 0) {
         return countToRight;
-    } else if(countToRight < countToLeft){
+    } else if(countToRight == 0){
         return countToLeft;
-    } else if(countToRight,countToLeft == 0){
+    } else if(countToRight == 0 && countToLeft == 0){
         return 0;
+    } else if (countToRight < countToLeft) {
+        return countToRight;
+    } else if (countToLeft < countToRight){
+        return countToLeft;
     }
   }
   
@@ -41,3 +46,4 @@ function targetTerdekat(arr) {
   console.log(targetTerdekat(['x', ' ', ' ', ' ', 'x', 'x', 'o', ' '])); // 1
   console.log(targetTerdekat([' ', ' ', 'o', ' '])); // 0
   console.log(targetTerdekat([' ', 'o', ' ', 'x', 'x', ' ', ' ', 'x'])); // 2
+  console.log(targetTerdekat([" ", "x", "o", " ", " ", "x", " ", "x"]));
